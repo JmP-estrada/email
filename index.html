@@ -1,0 +1,223 @@
+
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario con iconos</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+</head>
+<body>
+    <div class="container">
+
+        <label>
+            <h2> TU EMAIL </h2>
+            <input autocomplete="off" type="email" required placeholder="Ingresa tu correo">
+            <span class="icon icon-cancel" role="presentation">❌</span>
+            <span class="icon icon-check" role="presentation">✅</span>
+        </label>
+    </div>
+</body>
+</html>
+
+
+
+
+
+
+
+    <style>
+        
+        body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    margin-top: 80px;
+    overflow: hidden; /* Para que el fondo animado ocupe toda la pantalla */
+    background: linear-gradient(-45deg,#ffffff, #fdfdfd, #000000, #ffffff, #000000, #ffffff, #ffffff);
+    background-size: 400% 400%; /* Tamaño del degradado */
+    animation: gradientAnimation 15s ease infinite; /* Animación del fondo */
+}
+
+@keyframes gradientAnimation {
+    0% {
+        background-position: 50% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 50% 50%;
+    }
+}
+
+
+
+        /* Nuevos estilos */
+        .container {
+
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 80vh;
+            text-align: center;
+        }
+
+        label {
+        
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 80%;
+            max-width: 400px;
+            margin: 0 auto;
+        }
+
+        label span {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            margin-top: 10px;
+        }
+
+        input {
+
+            padding: 10px 0 10px;
+            text-align: center;
+            margin: 5px;
+            width: 100%;
+            max-width: 400px;
+            font-size: 16px;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+
+        input:valid {
+            border-color: forestgreen;
+        }
+
+        .icon {
+            display: none;
+            font-size: 24px;
+            margin-left: 10px;
+        }
+
+        input:invalid + .icon-cancel {
+
+            display: inline;
+            color: rgb(255, 0, 0);
+        }
+
+        input:valid + .icon-cancel {
+            display: none;
+        }
+
+        input:valid + .icon-cancel + .icon-check {
+            display: inline;
+            color: forestgreen;
+        }
+
+        /* Estilos de texto */
+        h2 {
+
+            font-family: 'TeXGyreCursor-Regular', monospace;
+            font-weight: bold;
+            font-size: 30px;
+            margin-bottom: 10px;
+            font-style: italic;
+            display: block;
+          
+        }
+
+        input::placeholder {
+        font-family: 'TeXGyreCursor-Regular', monospace;
+        font-weight: bold;
+         font-style: italic;
+         font-size: 18px;
+
+        }
+
+
+label:has(:focus:invalid) {
+
+color: rgb(255, 0, 0);
+
+}
+
+label:has(:focus:valid)  {
+
+color: rgb(0, 255, 0);
+
+}
+
+label:has(:focus-visible:invalid) 
+
+input {
+
+outline-color: rgb(255, 0, 0);
+
+}
+
+label:has(:focus-visible:valid) 
+
+input {
+
+outline-color: green;
+
+}
+
+.icon {
+
+display: none;
+
+}
+
+
+label:has(:focus:invalid) 
+
+.icon-cancel,
+
+label:has(:focus:valid) 
+
+.icon-check {
+
+display: unset;
+
+}
+
+
+
+
+        /* Responsividad */
+        @media (max-width: 600px) {
+            body {
+                margin-top: 0;
+            }
+
+            label {
+                width: 90%;
+            }
+
+            input {
+                font-size: 14px;
+                padding: 8px;
+            }
+
+            .icon {
+                font-size: 20px;
+            }
+
+            label::before {
+                font-size: 18px;
+            }
+        }
+
+
+
+
+
+
+
+    </style>
